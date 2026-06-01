@@ -1,0 +1,13 @@
+source,canonical_field,dtype,range_or_values,notes
+ams,cum_gpa,float,[0.0 - 4.0],cumulative GPA on a 4-point scale
+ams,credits_earned,int,>=0,credits earned in the semester
+ams,scholarship,categorical,{none|merit|need},scholarship status
+iucp,has_internship,binary,{0|1},1 if the student has an active internship
+iucp,supervisor_rating,float,[0 - 100],NaN when has_internship=0 (structural zero)
+iucp,project_completions,int,>=0,industry-collaboration project completions
+lms,submission_rate,float,[0.0 - 1.0],assignment submission rate
+lms,login_count,int,>=0,LMS logins in the semester
+lms,forum_posts,int,>=0,discussion-forum posts
+sas,attendance_rate,float,[0.0 - 1.0],class-attendance rate
+sas,gender,categorical,{M|F},reported gender
+sas,disciplinary_events,int,>=0,disciplinary records in the semester

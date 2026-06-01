@@ -1,0 +1,27 @@
+# External-benchmark configuration (OULAD + EdNet-KT1).
+# Each benchmark exposes a 13-feature generic representation that
+# excludes the industry-university features unique to the institutional
+# pipeline.  Early-window fractions follow §2.6 of the manuscript.
+
+benchmarks:
+  oulad:
+    url: "https://analyse.kmi.open.ac.uk/open_dataset/download"
+    n_students_expected: 32593
+    early_window_frac: 0.30
+    label_mapping:
+      Distinction: 0   # Normal
+      Pass:        1   # Blue
+      Withdrawn:   2   # Yellow
+      Fail:        3   # Red
+
+  ednet_kt1:
+    url: "https://github.com/riiid/ednet/releases/download/v1.0/KT1.zip"
+    n_users_expected: 12347
+    early_window_frac: 0.50
+    correctness_thresholds:
+      Normal: ">= 0.75"
+      Blue:   "0.55 .. 0.75"
+      Yellow: "0.35 .. 0.55"
+      Red:    "< 0.35"
+
+generic_feature_slots: 13

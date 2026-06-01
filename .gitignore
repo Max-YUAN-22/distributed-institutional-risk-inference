@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data (never commit real records)
+data/
+data_raw/
+data_processed/
+*.csv.gz
+*.parquet
+synthetic_data/synthetic_*.csv
+!synthetic_data/sample_schema.csv
+
+# Outputs
+runs/
+checkpoints/
+logs/
+results/
+figures/*.png
+figures/*.pdf
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,42 @@
+# Canonical schema for the institutional pipeline.
+# Each source contributes a subset of the 35 features that compose
+# the final per-student-per-semester feature tensor.
+#
+# The pipeline aligns source records on (student_id, semester).
+schema_version: "1.0"
+
+sources:
+  ams:
+    primary_key: [student_id, semester]
+    features:
+      - cum_gpa
+      - credits_earned
+      - scholarship       # categorical → one-hot
+  iucp:
+    primary_key: [student_id, semester]
+    features:
+      - has_internship
+      - supervisor_rating # structurally NaN when has_internship == 0
+      - project_completions
+  lms:
+    primary_key: [student_id, semester]
+    features:
+      - submission_rate
+      - login_count
+      - forum_posts
+  sas:
+    primary_key: [student_id, semester]
+    features:
+      - attendance_rate
+      - gender            # categorical → one-hot
+      - disciplinary_events
+
+# Hierarchical risk label thresholds (applied per-semester to the
+# composite z-score over GPA, attendance, and submission_rate).
+label_thresholds:
+  Normal: ">= -0.5"
+  Blue:   "-1.0 .. -0.5"
+  Yellow: "-1.5 .. -1.0"
+  Red:    "< -1.5"
+
+n_semesters_window: 4
