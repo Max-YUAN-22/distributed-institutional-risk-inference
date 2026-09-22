@@ -1,5 +1,30 @@
 # Distributed Institutional Risk Inference
 
+> ## ⚠️ Status: superseded (September 2026)
+>
+> The manuscript this package accompanied — *"A Distributed Data Fusion and
+> Lightweight Deep Learning Framework for Hierarchical Risk Prediction over
+> Heterogeneous Institutional Data Streams"* (submitted to *Cluster
+> Computing*) — was **not published** and has been superseded by a new study:
+>
+> **"From Contemporaneous to Prospective: Quantifying Target Leakage in
+> Student Academic Risk Prediction with Lightweight Temporal Models"**
+> (submitted to the *International Journal of Data Science and Analytics*).
+>
+> **All currently maintained code lives at
+> [prospective-risk-leakage](https://github.com/Max-YUAN-22/prospective-risk-leakage).**
+>
+> Notes on this repository:
+> - The pipeline code (extractors, fusion, tensor construction, models) is
+>   retained for reference.
+> - The private institutional dataset is no longer available, so the
+>   institutional experiments of the superseded manuscript **cannot be
+>   re-run or independently audited**; this package does not reproduce or
+>   support any institutional performance figures.
+> - The public-benchmark scripts here are outdated; use the new repository
+>   for the current OULAD / EdNet-KT1 protocols.
+
+
 Reproducibility package for the manuscript
 
 > **A Distributed Data Fusion and Lightweight Deep Learning Framework for
